@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>shdWebPortlet</display-name>
+	<listener>
+	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<listener>
+		<listener-class>com.shd.websso.SessionListener</listener-class>
+	</listener>
+	
+
+	<servlet>
+		<description></description>
+		<display-name>imageServlet</display-name>
+		<servlet-name>imageServlet</servlet-name>
+		<servlet-class>com.shd.servlets.ImageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>imageServlet</servlet-name>
+		<url-pattern>/imageServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UploadFile</servlet-name>
+		<servlet-class>com.shd.servlets.UploadFile</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadFile</servlet-name>
+		<url-pattern>/UploadFile</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ShdBcServlet</display-name>
+		<servlet-name>ShdBcServlet</servlet-name>
+		<servlet-class>com.shd.servlets.ShdBcServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShdBcServlet</servlet-name>
+		<url-pattern>/shdBcServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>UploadFileImage</servlet-name>
+    	<servlet-class>com.shd.servlets.UploadFileImage</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>UploadFileImage</servlet-name>
+    	<url-pattern>/UploadFileImage</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+    	<description></description>
+    	<display-name>ShdNewsServlet</display-name>
+    	<servlet-name>ShdNewsServlet</servlet-name>
+    	<servlet-class>com.shd.servlets.ShdNewsServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>ShdNewsServlet</servlet-name>
+    	<url-pattern>/shdNewsServlet</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+	    <description></description>
+	    <display-name>FileServlet</display-name>
+	    <servlet-name>FileServlet</servlet-name>
+	    <servlet-class>com.shd.servlets.FileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>FileServlet</servlet-name>
+	    <url-pattern>/fileServlet</url-pattern>
+	</servlet-mapping>
+	
+  	<servlet>
+  		<description>
+  		</description>
+  		<display-name>SsoServlet</display-name>
+  		<servlet-name>SsoServlet</servlet-name>
+  		<servlet-class>com.shd.servlets.SsoServlet</servlet-class>
+  	</servlet>
+	<servlet-mapping>
+		<servlet-name>SsoServlet</servlet-name>
+		<url-pattern>
+		/ssoServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+  		<description>
+  		</description>
+  		<display-name>SSOValidator</display-name>
+  		<servlet-name>SSOValidator</servlet-name>
+  		<servlet-class>com.shd.servlets.SSOValidator</servlet-class>
+  	</servlet>
+	<servlet-mapping>
+		<servlet-name>SSOValidator</servlet-name>
+		<url-pattern>
+		/SSOValidator</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<security-constraint>
+	   	<display-name>Default Portlet Security Constraints</display-name>
+	      <web-resource-collection>
+	      <web-resource-name>Protected Area</web-resource-name>
+	      <url-pattern>/shdWebPortlet/*</url-pattern>
+	      <http-method>GET</http-method>
+	      <http-method>POST</http-method>
+	   	</web-resource-collection>
+		<auth-constraint>
+		   <role-name>Administrator</role-name>
+		</auth-constraint>
+		<user-data-constraint>
+		   <transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	
+
+	<!-- 
+	<security-constraint id="SecurityConstraint_1">
+	    <web-resource-collection id="WebResourceCollection_1">
+	      <web-resource-name>Protected Area</web-resource-name>
+	      <url-pattern>/shdWebPortlet/*</url-pattern>
+	      </web-resource-collection>
+	    <auth-constraint id="AuthConstraint_1">
+	      <role-name>Administrator</role-name>
+	    </auth-constraint>
+	</security-constraint>
+	<security-constraint>
+		<display-name>userConstraint</display-name>
+		<web-resource-collection>
+			<web-resource-name>secure</web-resource-name>
+			<url-pattern>/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<description>all authenticated portal users</description>
+			<role-name>Administrator</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-role>
+		<description>all authenticated portal users</description>
+		<role-name>Administrator</role-name>
+	</security-role>
+	-->
+</web-app>

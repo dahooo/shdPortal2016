@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><portlet-properties>
+    <portlet name="shdWebPortlet">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_shdWebPortlet/jsp/html/ShdWebPortletView.jsp</value>
+        </property>
+    </portlet>
+    <portlet name="shdBcMainWebPortlet">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_shdBcMainWebPortlet/jsp/html/ShdBcMainWebPortletView.jsp</value>
+        </property>
+    </portlet>
+    <portlet name="shdEditNewsWebPortlet">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_shdEditNewsWebPortlet/jsp/html/ShdEditNewsWebPortletView.jsp</value>
+        </property>
+    </portlet>
+    <portlet name="shdNewsWebPortlet">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_shdNewsWebPortlet/jsp/html/ShdNewsWebPortletView.jsp</value>
+        </property>
+    </portlet>
+    <portlet name="shdEditBulletinBoardPortlet">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_shdEditBulletinBoardPortlet/jsp/html/ShdEditBulletinBoardPortletView.jsp</value>
+        </property>
+    </portlet>
+    <portlet name="shdBulletinBoardPortlet">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_shdBulletinBoardPortlet/jsp/html/ShdBulletinBoardPortletView.jsp</value>
+        </property>
+    </portlet>
+</portlet-properties>

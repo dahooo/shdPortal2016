@@ -1,0 +1,642 @@
+﻿ @charset "utf-8";
+
+
+#container{
+    width:1100px;
+    margin: 20px auto 0 auto;
+}
+
+/*======================================content */
+
+.entry-container{
+    margin-right:26px;
+    margin-bottom:20px;
+
+}
+
+    .entry-title{
+        width:140px;
+        height:27px;
+        line-height:27px;
+        font-size:18px;
+        text-align:left ;
+        padding-left:20px;
+        color:#444444;
+        border-right:3px solid #b41f45 ;
+        border-left:3px solid #b41f45 ;
+
+    }
+
+    .entry-content{
+        border-top:1px solid #bcbfc6;
+        margin-top:12px;
+        padding:12px 0 0 20px ;
+
+    }
+        .entry-content ul{
+            list-style-type:disc ;
+            margin-left:20px;
+        }
+        .entry-content li{
+            color:#05386b  ;
+            line-height:25px;
+        }
+        .entry-content li:hover{
+            text-decoration:underline ;
+        }
+
+    
+.bc_content {
+    width:100%;
+    margin-bottom:40px;
+}
+
+
+
+.news-entry-content{
+	margin-top: 12px;
+	padding: 12px 0px 0px 0px;
+    //padding: 12px 0 0 20px;
+    border-top:1px #bcbfc6 solid ;
+}
+
+
+
+
+/* NEWS Table --------------------------- */
+
+.fileType{
+  color: #FFFFFF;
+  background: #aa002b;
+  text-align: center;
+  text-transform:uppercase;
+  line-height: 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 100px;
+  margin:5px;
+}
+
+.fileType:hover{
+    text-decoration:underline ;
+}
+
+
+.newsTable {
+	background: #f5f5f5;
+	border-collapse: separate;
+	box-shadow: inset 0 1px 0 #fff;
+	font-size: 12px;
+	line-height: 24px;
+	margin: 5px auto;
+	text-align: left;
+	width: 100%;
+}	
+
+.newsTable .div_th {
+	background-color: #aa002b;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #e8e8e8;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e8e8e8;
+	box-shadow: inset 0 1px 0 #999;
+	color: #fff;
+  	font-weight: bold;
+	padding: 10px 15px;
+	position: relative;
+	text-shadow: 0 1px 0 #000;	
+}
+
+.newsTable .div_th:after {
+	background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
+	content: '';
+	display: block;
+	height: 25%;
+	left: 0;
+	margin: 1px 0 0 0;
+	position: absolute;
+	top: 25%;
+	width: 100%;
+}
+
+
+
+
+.newsTable .div_td {
+	border-right: 1px solid #fff;
+	border-left: 1px solid #e8e8e8;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e8e8e8;
+	padding: 10px 15px;
+	position: relative;
+	vertical-align: top;
+}
+
+.newsTable .div_td:first-child {
+	box-shadow: inset 1px 0 0 #fff;
+}	
+
+.newsTable .div_td:last-child {
+	border-right: 1px solid #e8e8e8;
+	box-shadow: inset -1px 0 0 #fff;
+}	
+
+
+
+
+
+.newsTable .div_tr:last-of-type td {
+	box-shadow: inset 0 -1px 0 #fff; 
+}
+
+.newsTable .div_tr:last-of-type td:first-child {
+	box-shadow: inset 1px -1px 0 #fff;
+}	
+
+.newsTable .div_tr:last-of-type td:last-child {
+	box-shadow: inset -1px -1px 0 #fff;
+}	
+
+.newsListTitle{
+    color:#aa002b ; 
+    font-size:18px; 
+    letter-spacing: 1px; 
+    text-indent:-1px;
+}
+
+
+
+/* 編輯新聞頁專用 --------------------- */
+
+.newsTableaADD {
+	background: #f5f5f5;
+	border-collapse: separate;
+	box-shadow: inset 0 1px 0 #fff;
+	font-size: 12px;
+	line-height: 24px;
+	margin: 5px auto;
+	text-align: left;
+	width: 100%;
+}	
+
+.newsTableaADD .div_th {
+	background-color: #aa002b;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #e8e8e8;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e8e8e8;
+	box-shadow: inset 0 1px 0 #999;
+	color: #fff;
+  	font-weight: bold;
+	padding: 10px 15px;
+	position: relative;
+	text-shadow: 0 1px 0 #000;	
+}
+
+.newsTableaADD .div_th:after {
+	background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
+	content: '';
+	display: block;
+	height: 25%;
+	left: 0;
+	margin: 1px 0 0 0;
+	position: absolute;
+	top: 25%;
+	width: 100%;
+}
+
+
+
+
+.newsTableaADD .div_td {
+	border-right: 1px solid #fff;
+	border-left: 1px solid #e8e8e8;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e8e8e8;
+	padding: 10px 15px;
+	position: relative;
+	vertical-align: top;
+}
+
+.newsTableaADD .div_td:first-child {
+	box-shadow: inset 1px 0 0 #fff;
+}	
+
+.newsTableaADD .div_td:last-child {
+	border-right: 1px solid #e8e8e8;
+	box-shadow: inset -1px 0 0 #fff;
+}	
+
+
+
+
+
+.newsTableaADD .div_tr:last-of-type td {
+	box-shadow: inset 0 -1px 0 #fff; 
+}
+
+.newsTableaADD .div_tr:last-of-type td:first-child {
+	box-shadow: inset 1px -1px 0 #fff;
+}	
+
+.newsTableaADD .div_tr:last-of-type td:last-child {
+	box-shadow: inset -1px -1px 0 #fff;
+}	
+
+
+
+
+
+
+
+
+
+/* BC Table----------------------------- */
+
+
+    .news-entry-content {
+        //font-size:1.2em;
+    }
+
+
+    .BCDetailTable, .BCDetail, .BCDetailTableImg {
+        width: 100%;
+        position: relative;
+        right: 0;
+        top: 0px;
+    }
+
+    .BCDetailTable {
+        padding-left:20px;
+        box-sizing: border-box;
+        line-height: 20px;
+        padding-right:20px;
+        padding-bottom: 20px;
+    }
+
+        .BCDetailTable .div_tr .div_th, .BCDetailTable .div_tr .div_td {
+            display: block;
+            line-height: normal;
+            width: 100%;
+        }
+
+        .BCDetailTable .div_tr .div_th {
+            text-align: left;
+            padding: 0 0 0 3px;
+            font-weight: bolder;
+        }
+
+        .BCDetailTable .div_td input, .BCDetailTable .div_td textarea {
+            text-align: left;
+            padding: 5px;
+            width: 100%;
+            vertical-align: top;
+            box-sizing: border-box;
+            border: none;
+            font-size: 1.1em;
+            -webkit-appearance: none;
+
+        }
+
+        .BCDetailTable .div_tr {
+            border-bottom: 1px dotted #dbdbdb;
+        }
+
+
+/* 評審回應=================================== */
+
+.auditOpinion {
+    width: 100%;
+    border: 1px #ab032d solid;
+    padding-right: 20px;
+    padding-top: 20px;
+    margin-top: 50px;
+    margin-right: 2%;
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+}
+
+.auditOpinion-title {
+    background-color: #fff;
+    color: #ab032d;
+    width: 100px;
+    text-align:center ;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    //border-right: 3px solid #b41f45;
+    //border-left: 3px solid #b41f45;
+}
+
+.AOul li{
+    display:block ;
+    padding:20px;
+    width:90% ;
+    box-sizing:border-box ;
+    height:auto;
+    position:relative;
+    border-bottom:1px dotted #aaa ;
+    margin:auto  ;
+
+}
+.AOul li:last-child {
+    border-bottom:0px dotted #ab032d ;
+
+}
+
+.AOstatus{
+    width:50px; 
+    height:50px; 
+    background-color:#aa002b ; 
+    border-radius:100%; 
+    line-height:50px; 
+    text-align:center ; 
+    color:#ffffff ;
+    position:absolute ;
+    left:20px;
+    top:20px;
+}
+
+.AOcontent{
+    width:80%; 
+    min-height:20px;
+    box-sizing:border-box ;
+    margin-left:70px;
+    margin-top:10px;
+    padding-bottom: 10px;
+    
+}
+
+.AOname{
+    font-weight:bolder ;
+    color:#05386b ;
+    margin-left:70px;
+
+}
+
+.AOtime{
+    font-weight:400 ;
+    color:#aeaeae  ;
+    font-size:12px;
+   
+
+}
+
+/* 表單按鈕元件---------------------------------*/
+
+.bcButton{
+	background-color: #aa002b;
+    //border-color: white;
+	padding:3px 12px;
+	font-size: 13px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	//font-weight: bold;
+	color:white;
+	border-radius: 0px;
+	border:0 ;
+}
+
+.newBCButton{
+    text-align:right ;
+    margin-right:25px;
+}
+
+.bc_line{
+    border-right:1px #edcad3 solid ;
+}
+
+.BCDetailTable .div_td input{
+	text-align: left;
+	padding: 5px;
+    width:30% ;
+	vertical-align: middle;
+    -webkit-appearance: none;
+}
+
+.BCDetailTable .div_td textarea{
+	text-align: left;
+	padding: 5px;
+    width:100% ;
+	height:180px;
+	vertical-align: top;
+	box-sizing: border-box;
+}
+
+
+.URLfrom{
+    color:#909090 ; 
+    padding-top:10px; 
+    font-size:10px; 
+    word-break: break-all;
+}
+
+
+/* 頁數=================================== */
+
+.pagesStyle{
+    padding-top:10px;
+    margin-right: 26px;
+    margin-top:20px;
+    border-top:3px #ab032d solid ;
+    
+    
+
+}
+.pagesStyle a{
+    text-decoration:none ;
+    color:#ab032d ;
+}
+
+.firstPage , .previousPage , .nextPage , .lastPage {
+    //background:url(../images/pageIcon.png) no-repeat ;
+    display:inline-block ;
+    width:25px;
+    height:25px;
+    vertical-align: middle;
+   
+
+}
+
+.firstPage{
+    background-position:0 0 ;
+}
+
+.previousPage{
+    background-position:-35px 0 ;
+}
+
+.nextPage{
+    background-position:-66px 0 ;
+}
+
+.lastPage{
+    background-position:-93px 0 ;
+}
+
+
+/* ================================================================================
+    FOR RWD 
+    ===============================================================================
+*/
+
+@media only screen and (max-width:768px) {
+	#filesTable{
+		/*display:none;*/
+	}
+	
+    #container {
+        width: 100%;
+    }
+
+
+    /*======================================content */
+
+    .entry-container {
+        margin: 0 0 5% 0;
+    }
+
+    .entry-title {
+        margin: auto;
+        text-align: center;
+        padding: 0;
+        font-size: 1.3em;
+        width: 200px;
+    }
+
+    /* 原生表格樣式=============================== */
+
+    .news-entry-content {
+        padding: 10px;
+        font-size:1.2em;
+    }
+
+
+    .BCDetailTable, .BCDetail, .BCDetailTableImg {
+        width: 100%;
+        position: relative;
+        right: 0;
+        top: 0px;
+    }
+
+    .BCDetailTable {
+        padding-left: 0px;
+        padding-right:0px;
+        line-height:normal ;
+    }
+
+        .BCDetailTable .div_tr .div_th, .BCDetailTable .div_tr .div_td {
+            display: block;
+            line-height: normal;
+            width: 100%;
+        }
+
+        .BCDetailTable img{
+            width:100% ;
+        }
+
+        .BCDetailTable .div_tr .div_th {
+            text-align: left;
+            padding: 0 0 0 3px;
+            font-weight: bolder;
+        }
+
+        .BCDetailTable .div_td input, .BCDetailTable .div_td textarea {
+            text-align: left;
+            padding: 5px;
+            width: 100%;
+            vertical-align: top;
+            box-sizing: border-box;
+            border: none;
+            font-size: 1.1em;
+            -webkit-appearance: none;
+        }
+
+        .BCDetailTable .div_tr {
+            border-bottom: 1px dotted #dbdbdb;
+        }
+    /* NEWS=================================== */
+
+    #authorName , #CREATED_DATE_STAR , #CREATED_DATE_END , #newsType{
+        width:100% ;
+        font-size:1.3em ;
+        padding:5px;
+        border-radius:3px;
+        border:1px #dbdbdb solid ;
+        box-sizing:border-box ;
+
+    }
+
+    .newsTable .div_tr{
+        font-size:1.2em ; 
+    }
+
+    /* 按鈕元件====================================== */
+
+    .bcButton{
+	    display:block ;
+        width:90% ;
+        margin:10px auto;
+        padding:10px;
+        font-size:1.1em ;
+        border-radius:5px;
+        box-shadow:1px 1px 0 0 #dbdbdb ;
+
+
+    }
+    /* 頁數=================================== */
+
+    .pagesStyle{
+        padding-top:10px;
+        margin:0px 0 0 0;
+        border-top:3px #ab032d solid ;
+
+    }
+
+
+    .newBCButton{
+        text-align:center ;
+        margin-right:0px;
+    }
+
+    .firstPage , .previousPage , .nextPage , .lastPage {
+        //background:url(../images/pageIconBig.jpg) no-repeat ;
+        display:inline-block ;
+        width:50px;
+        height:42px;
+        text-indent:-99999px;
+        vertical-align: middle;
+
+    }
+
+    .firstPage{
+        background-position:0 0 ;
+    }
+
+    .previousPage{
+        background-position:-45px 0 ;
+    }
+
+    .nextPage{
+        background-position:-107px 0 ;
+    }
+
+    .lastPage{
+        background-position:-153px 0 ;
+    }
+
+
+    .eachPage{
+
+        display: inline-block;
+        vertical-align: sub;
+    }
+    .totalRowWording{
+        display:block ;
+        color:#808080 ;
+        font-size:10px;
+    }
+
+
+/*===============*/
+}

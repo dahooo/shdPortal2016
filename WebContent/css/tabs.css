@@ -1,0 +1,113 @@
+.tabs input[type=radio] {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+      }
+      .tabs {
+        width: 100%;
+        float: none;
+        list-style: none;
+        position: relative;
+        padding: 0;
+        margin: 30px auto;
+        height: 700px;
+      }
+      .tabs li{
+        float: left;
+      }
+      .tabs label {
+          display: block;
+          padding: 10px 10px;
+          border-radius: 2px 2px 0 0;
+          color: #aa002b;
+          font-size: 14px;
+          font-weight: normal;
+          background: rgba(255,255,255,0.2);
+          cursor: pointer;
+          position: relative;
+          top: 3px;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+      }
+      .tabs label:hover {
+        background: rgba(255,255,255,0.5);
+        top: 0;
+      }
+       
+      [id^=tab]:checked + label {
+        background: #aa002b;
+        color: white;
+        top: 0;
+      }
+       
+      [id^=tab]:checked ~ [id^=tab-content] {
+          display: block;
+      }
+      .tab-content{
+        display: none;
+        text-align: left;
+        width: 100%;
+        font-size: 14px;
+        line-height: 140%;
+        padding: 10px;
+        /*background: #08C;
+        color: white;*/
+        position: absolute;
+        left: 0;
+        box-sizing: border-box;
+        -webkit-animation-duration: 0.5s;
+        -o-animation-duration: 0.5s;
+        -moz-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        border-top: 3px solid #aa002b;
+      }
+
+
+
+.status_bubble {
+    position:absolute;    /* This breaks the div from the normal HTML document. */
+    left: 6px;
+    margin-top: 97px;
+    padding:3px;
+    background-color:#dc0d17; /* you could use a background image if you'd like as well */
+    color:white;
+    font-weight:bold;
+    font-size:0.55em;
+
+    /* The following is CSS3, but isn't crucial for this technique to work. */
+    /* Keep in mind that if a browser doesn't support CSS3, it's fine! They just won't have rounded borders and won't have a box shadow effect. */
+    /* You can always use a background image to produce the same effect if you want to, and you can use both together so browsers without CSS3 still have the rounded/shadow look. */
+    border-radius:4px;
+    box-shadow:1px 1px 1px gray;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .4);
+}
+
+
+
+.noti_bubble {
+    position:absolute;    /* This breaks the div from the normal HTML document. */
+    top: -6px;
+    right:12px;
+    padding:3px;
+    background-color:#dc0d17; /* you could use a background image if you'd like as well */
+    color:white;
+    font-weight:bold;
+    font-size:0.55em;
+
+    /* The following is CSS3, but isn't crucial for this technique to work. */
+    /* Keep in mind that if a browser doesn't support CSS3, it's fine! They just won't have rounded borders and won't have a box shadow effect. */
+    /* You can always use a background image to produce the same effect if you want to, and you can use both together so browsers without CSS3 still have the rounded/shadow look. */
+    border-radius:4px;
+    box-shadow:1px 1px 1px gray;
+    display: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .4);
+}
+
+
+
+
+.tLi{
+	display:none;
+}

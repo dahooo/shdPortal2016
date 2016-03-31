@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    
+    
+    
+    <sql-query name="bc.query.checkHasMailByUid">
+		<![CDATA[ 
+			select *  from [eaidb].[dbo].[EI_TB_HREMP] 
+			WHERE email is not null and jobstatus in (1,2)
+			and EmpNo = :uid
+		]]>
+	</sql-query>
+    
+    <sql-query name="bc.query.getStatus0ExTbBcModelMPagination">
+		<![CDATA[ 
+			select *
+				from 
+				ex_tb_bc_model_m a
+				left join 
+				[eaidb].[dbo].[EI_TB_HREMP] b on a.updated_id = b.empNo
+				where a.edit_status = 0
+				and a.created_id = :empNo
+				order by a.UPDATED_DATE desc
+		]]>
+	</sql-query>
+    
+    
+    <sql-query name="bc.query.getStatus4ExTbBcModelMPagination">
+		<![CDATA[ 
+			select *
+				from 
+				ex_tb_bc_model_m a
+				left join 
+				[eaidb].[dbo].[EI_TB_HREMP] b on a.updated_id = b.empNo
+				where a.edit_status = 4
+				and a.created_id = :empNo
+				order by a.UPDATED_DATE desc
+		]]>
+	</sql-query>
+    
+    <sql-query name="bc.query.getStatus5ExTbBcModelMPaginationRoleA">
+		<![CDATA[ 
+			select *
+				from 
+				ex_tb_bc_model_m a
+				left join 
+				[eaidb].[dbo].[EI_TB_HREMP] b on a.updated_id = b.EmpNO
+				where a.edit_status = 5
+				order by a.UPDATED_DATE desc
+		]]>
+	</sql-query>
+    
+    
+    <sql-query name="bc.query.getStatus5ExTbBcModelMPagination">
+		<![CDATA[ 
+			select a.*,b.*
+				from 
+				ex_tb_bc_model_m a
+				left join 
+				[eaidb].[dbo].[EI_TB_HREMP] b on a.updated_id = b.EmpNO
+				left join
+				[eaidb].[dbo].[EI_TB_HREMP] c on a.created_id = c.EmpNO
+				where c.deptCode like :deptCode and a.edit_status = 5
+				order by a.UPDATED_DATE desc
+		]]>
+	</sql-query>
+    
+    
+    <sql-query name="bc.query.getBcPositionCodeByEmpNo">
+		<![CDATA[ 
+			select a.empNo,a.positionCode,a.empCname,
+			CASE SUBSTRING(a.deptCode,0,3) 
+			WHEN 'TA' THEN SUBSTRING(a.deptCode,0,4)
+			WHEN 'GA' THEN SUBSTRING(a.deptCode,0,4)
+			ELSE SUBSTRING(a.deptCode,0,3)
+			END deptCode
+			from  [eaidb].[dbo].[EI_TB_HREMP] a
+  			where a.EmpNo = :empNo
+		]]>
+	</sql-query>
+    
+
+    <sql-query name="bc.query.getExTbBcModelMById">
+		<![CDATA[ 
+			select 
+			*
+			from 
+			ex_tb_bc_model_m
+			where BC_M_ID = :BC_M_ID
+		]]>
+	</sql-query>
+    
+    
+    <sql-query name="bc.query.getReleaseExTbBcModelMPagination">
+		<![CDATA[ 
+			select * from 
+			ex_tb_bc_model_m c
+			left join 
+            [eaidb].[dbo].[EI_TB_HREMP] e on c.updated_id = e.EmpNO
+            where c.edit_status = :EDIT_STATUS
+			order by c.UPDATED_DATE desc
+		]]>
+	</sql-query>
+    
+    <sql-query name="bc.query.getExTbBcModelMDPagination">
+		<![CDATA[ 
+			select * from 
+			ex_tb_bc_model_m c
+			left join 
+            [eaidb].[dbo].[EI_TB_HREMP] e on c.updated_id = e.EmpNO
+			where c.CREATED_ID = :empNo
+			and c.edit_status in (1,2,3,7)
+			order by c.AWARD_DATE desc,c.UPDATED_DATE desc
+		]]>
+	</sql-query>
+	
+    <sql-query name="bc.query.getExTbBcModelMCPagination">
+		<![CDATA[ 
+			select * from(
+				select *
+				from 
+				ex_tb_bc_model_m c
+				where c.CREATED_ID = :empNo
+				and c.edit_status in (1,2,3,7)
+				union
+				select a.*
+				from 
+				ex_tb_bc_model_m a
+				left join 
+				[eaidb].[dbo].[EI_TB_HREMP] b on a.updated_id = b.EmpNO
+				where b.deptCode like :deptCode and b.positionCode in ('821','822')
+				and a.edit_status in (1,7)
+			)main
+			left join 
+			[eaidb].[dbo].[EI_TB_HREMP] e on main.updated_id = e.EmpNO
+			order by main.AWARD_DATE desc,main.UPDATED_DATE desc
+		]]>
+	</sql-query>
+	
+    <sql-query name="bc.query.getExTbBcModelMBPagination">
+		<![CDATA[ 
+			select * from(
+				select *
+				from 
+				ex_tb_bc_model_m c
+				where c.CREATED_ID = :empNo
+				and c.edit_status in (1,2,3,7)
+				union
+				select a.*
+				from 
+				ex_tb_bc_model_m a
+				left join 
+				[eaidb].[dbo].[EI_TB_HREMP] b on a.updated_id = b.EmpNO
+				where b.deptCode like :deptCode and b.positionCode in ('702','703')
+				and a.edit_status in (1,3,7)
+			)main
+			left join 
+			[eaidb].[dbo].[EI_TB_HREMP] e on main.updated_id = e.EmpNO
+			order by main.AWARD_DATE desc,main.UPDATED_DATE desc
+		]]>
+	</sql-query>
+	
+    <sql-query name="bc.query.getExTbBcModelMAPagination">
+		<![CDATA[ 
+			select * from(
+				select *
+				from 
+				ex_tb_bc_model_m c
+				where c.CREATED_ID = :empNo
+				and c.edit_status in (1,2,3,7)
+				union
+				select a.*
+				from 
+				ex_tb_bc_model_m a
+				left join 
+				[eaidb].[dbo].[EI_TB_HREMP] b on a.updated_id = b.EmpNO
+				where b.positionCode in ('512')
+				and a.edit_status in (1,3,7)
+				union
+				select d.*
+				from 
+				ex_tb_bc_model_m d
+				where d.updated_id = :empNo
+				and d.edit_status in (7)
+			)main
+			left join 
+			[eaidb].[dbo].[EI_TB_HREMP] e on main.updated_id = e.EmpNO
+			order by main.AWARD_DATE desc,main.UPDATED_DATE desc
+		]]>
+	</sql-query>
+    
+	
+    
+    <sql-query name="bc.save.saveExTbBcModelM">
+		insert into
+	        ex_tb_bc_model_m
+	        (
+	        	BC_M_ID,
+		    	NAME,
+		        SENIORITY,
+	        	BC_GROUP,
+	           	STORE_NAME,
+	          	CREATED_DATE,
+	           	CREATED_ID,
+	           	UPDATED_DATE,
+	          	UPDATED_ID,
+	          	TOPIC,
+	          	PIC_NAME,
+	           	EDIT_STATUS,
+	          	INTRODUCTION
+	        ) 
+	    values
+	        (:BC_M_ID,:NAME,:SENIORITY,:BC_GROUP,:STORE_NAME,:CREATED_DATE,:CREATED_ID,
+	        :UPDATED_DATE,:UPDATED_ID,:TOPIC,:PIC_NAME,:EDIT_STATUS,:INTRODUCTION)
+	
+	</sql-query>
+    
+	<sql-query name="bc.update.updateExTbBcModelMStatus">
+		<![CDATA[ 
+			update ex_tb_bc_model_m
+			set 
+			UPDATED_DATE = :UPDATED_DATE, 
+			UPDATED_ID = :UPDATED_ID, 
+			AWARD_DATE = :AWARD_DATE,
+			EDIT_STATUS = :EDIT_STATUS
+			where BC_M_ID = :BC_M_ID 
+		]]>
+	</sql-query>
+    
+    
+	<sql-query name="bc.update.updateExTbBcModelM">
+		<![CDATA[ 
+			update ex_tb_bc_model_m
+			set 
+			NAME = :NAME, 
+			SENIORITY = :SENIORITY, 
+			BC_GROUP = :BC_GROUP, 
+			STORE_NAME = :STORE_NAME,
+			UPDATED_DATE = :UPDATED_DATE, 
+			UPDATED_ID = :UPDATED_ID, 
+			TOPIC = :TOPIC,
+			EDIT_STATUS = :EDIT_STATUS, 
+			INTRODUCTION = :INTRODUCTION
+			where BC_M_ID = :BC_M_ID 
+		]]>
+	</sql-query>
+	
+	
+	<sql-query name="bc.delete.deleteExTbBcModelM">
+		<![CDATA[ 
+			DELETE FROM 
+			ex_tb_bc_model_m
+			WHERE BC_M_ID = :BC_M_ID
+		]]>
+	</sql-query>
+	
+	<sql-query name="bc.delete.deleteExTbBcLogM">
+		<![CDATA[ 
+			DELETE FROM 
+			EX_TB_BC_LOG_M
+			WHERE BC_M_ID = :BC_M_ID
+		]]>
+	</sql-query>
+	
+	
+    
+    
+</hibernate-mapping>
